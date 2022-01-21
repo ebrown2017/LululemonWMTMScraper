@@ -1,0 +1,15 @@
+{
+    "query": "query getCategoryDetails($category: String!, $nValue: String!, $sl: String!, $locale: String!, $Ns: String, $storeId: String, $pageSize: Int, $page: Int, $onlyStore: Boolean) {\n  categoryDetails(\n    category: $category\n    nValue: $nValue\n    locale: $locale\n    sl: $sl\n    Ns: $Ns\n    page: $page\n    pageSize: $pageSize\n    storeId: $storeId\n    onlyStore: $onlyStore\n  ) {\n    name\n    results: totalProducts\n    totalProductPages\n    currentPage\n    type\n    bopisProducts {\n      allAvailableSizes\n      currencyCode\n      defaultSku\n      displayName\n      listPrice\n      parentCategoryUnifiedId\n      productOnSale: onSale\n      productSalePrice: salePrice\n      pdpUrl\n      productCoverage\n      repositoryId: productId\n      productId\n      inStore\n      unifiedId\n      skuStyleOrder {\n        colorGroup\n        colorId\n        colorName\n        inStore\n        size\n        sku\n        skuStyleOrderId\n        styleId01\n        styleId02\n        styleId\n        __typename\n      }\n      swatches {\n        primaryImage\n        hoverImage\n        url\n        colorId\n        inStore\n        __typename\n      }\n      __typename\n    }\n    storeInfo {\n      totalInStoreProducts\n      totalInStoreProductPages\n      storeId\n      __typename\n    }\n    products {\n      allAvailableSizes\n      currencyCode\n      defaultSku\n      displayName\n      listPrice\n      parentCategoryUnifiedId\n      productOnSale: onSale\n      productSalePrice: salePrice\n      pdpUrl\n      productCoverage\n      repositoryId: productId\n      productId\n      inStore\n      unifiedId\n      skuStyleOrder {\n        colorGroup\n        colorId\n        colorName\n        inStore\n        size\n        sku\n        skuStyleOrderId\n        styleId01\n        styleId02\n        styleId\n        __typename\n      }\n      swatches {\n        primaryImage\n        hoverImage\n        url\n        colorId\n        inStore\n        __typename\n      }\n      __typename\n    }\n    seoLinks {\n      next\n      prev\n      self\n      __typename\n    }\n    __typename\n  }\n}\n",
+    "operationName": "getCategoryDetails",
+    "variables": {
+      "nValue": "N-1z0xcmkZ8t6",
+      "category": "sale",
+      "page": 1,
+      "pageSize": 500,
+      "storeId": null,
+      "sl": "US",
+      "locale": "en_US",
+      "onlyStore": false,
+      "forceMemberCheck": false
+    }
+}

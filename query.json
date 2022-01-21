@@ -1,0 +1,15 @@
+{
+  "query": "query getCategoryDetails($category: String!, $nValue: String!, $sl: String!, $locale: String!, $Ns: String, $storeId: String, $pageSize: Int, $page: Int, $onlyStore: Boolean) {\n  categoryDetails(\n    category: $category\n    nValue: $nValue\n    locale: $locale\n    sl: $sl\n    Ns: $Ns\n    page: $page\n    pageSize: $pageSize\n    storeId: $storeId\n    onlyStore: $onlyStore\n  ) {\n    products {\n      allAvailableSizes\n      currencyCode\n      displayName\n      listPrice\n      parentCategoryUnifiedId\n      productSalePrice: salePrice\n      pdpUrl\n      skuStyleOrder {\n        colorName\n        size\n        sku\n      }\n      }\n  }\n}\n",
+  "operationName": "getCategoryDetails",
+  "variables": {
+    "nValue": "N-1z0xcmkZ8t6",
+    "category": "sale",
+    "page": 1,
+    "pageSize": 1,
+    "storeId": null,
+    "sl": "US",
+    "locale": "en_US",
+    "onlyStore": false,
+    "forceMemberCheck": false
+  }
+}
