@@ -1,0 +1,13 @@
+Attributes we are saving for each product:
+    allAvailableSizes           ["XXL","XS","XL","S","M","L"]
+    currencyCode                "USD"
+    displayName                 "The Fundamental T-Shirt"
+    listPrice                   ["58.00","68.00"]
+    parentCategoryUnifiedId     "men-ss-tops"
+    productSalePrice            ["29.00","49.00"]
+    pdpUrl                      "/p/men-ss-tops/The-Fundamental-T-MD/_/prod10550045"  **extra note, going to have to add https://shop.lululemon.com before each
+
+    skyStyleOrder:
+        colorName              "Copper Brown"
+        size                   "XXL"        ***doesn't appear to store all available sizes for each colorway
+        sku                    "us_136301556"
