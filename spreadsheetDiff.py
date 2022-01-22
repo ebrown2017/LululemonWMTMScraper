@@ -3,11 +3,10 @@ import xlrd
 from xlwt import Workbook
 from datetime import datetime
 
-wb = Workbook()
-sheet = wb.add_sheet('Sheet 1')
-
-def formatOutputSheet():
-    # label the spreadsheet
+def getNewItems(sheet1, sheet2):
+    # create and label output sheet
+    wb = Workbook()
+    sheet = wb.add_sheet('Sheet 1')
     sheet.write(0, 1, 'Product Name')
     sheet.write(0, 2, 'Price')
     sheet.write(0, 3, 'Origional Price')
@@ -18,8 +17,6 @@ def formatOutputSheet():
     sheet.write(0, 8, 'Skus Available')
     sheet.write(0, 9, 'Link')
 
-
-def getNewItems(sheet1, sheet2):
     wb1 = xlrd.open_workbook(sheet1)
     wb2 = xlrd.open_workbook(sheet2)
 
@@ -31,8 +28,6 @@ def getNewItems(sheet1, sheet2):
     # store product names and colors for comparison
     for i in range(1, s1.nrows):
         data1[(s1.cell_value(i, 1))] = (s1.cell_value(i, 7))
-
-    formatOutputSheet()
 
     def addDiffRow(i, index, colorList=None):
         sheet.write(index, 0, index)

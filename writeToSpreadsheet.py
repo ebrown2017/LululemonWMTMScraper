@@ -3,12 +3,27 @@ import xlwt
 from xlwt import Workbook
 from scrape import scrape
 
-def getFileData(nValue, category):
-    time = str(datetime.now())
-    time = time[:len(time) - 7]
-    time = time.replace(' ', '_')
-    time = time.replace(':', '-')
-    return time + '_' + nValue + '_' + category
+def setFileName(nValue, category):
+    time = ''
+
+    dow = {
+        1: 'monday',
+        2: 'tuesday',
+        3: 'wednesday',
+        4: 'thursday',
+        5: 'friday',
+        6: 'saturday',
+        7: 'sunday',
+    }
+
+    time += dow[datetime.now().isoweekday()]
+
+    if category == 'N-1z0xcmkZ8t6':
+        time += '_womens'
+    else:
+        time += '_mens'
+
+    return time
 
 def parseToSpreadSheet(nValue="N-1z0xcmkZ8t6", category="sale"):
     data = scrape(nValue, category)
@@ -64,6 +79,6 @@ def parseToSpreadSheet(nValue="N-1z0xcmkZ8t6", category="sale"):
         counter += 1
 
     # save spreadsheet
-    fileData = getFileData(data[0], data[1])
+    fileData = setFileName(data[0], data[1])
     spreadsheetPath = './spreadsheets/' + fileData + '.xls'
     wb.save(spreadsheetPath)
