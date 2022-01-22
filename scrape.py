@@ -39,5 +39,5 @@ def scrape(nValue="N-1z0xcmkZ8t6", category="sale"):
     }
 
     response = session.post(graphQLUrl, headers=headers, json=json.loads(payload))
-
+    
     return [nValue, category, response.json()]

@@ -10,7 +10,9 @@ def getFileData(nValue, category):
     time = time.replace(':', '-')
     return time + '_' + nValue + '_' + category
 
-def parseToSpreadSheet(data):
+def parseToSpreadSheet(nValue="N-1z0xcmkZ8t6", category="sale"):
+    data = scrape(nValue, category)
+
     wb = Workbook()
     sheet = wb.add_sheet('Sheet 1')
 
@@ -65,7 +67,3 @@ def parseToSpreadSheet(data):
     fileData = getFileData(data[0], data[1])
     spreadsheetPath = './spreadsheets/' + fileData + '.xls'
     wb.save(spreadsheetPath)
-
-
-
-parseToSpreadSheet(scrape())

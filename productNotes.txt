@@ -11,3 +11,6 @@ Attributes we are saving for each product:
         colorName              "Copper Brown"
         size                   "XXL"        ***doesn't appear to store all available sizes for each colorway
         sku                    "us_136301556"
+
+
+To change what we get you will have to modify the query inside query.json
