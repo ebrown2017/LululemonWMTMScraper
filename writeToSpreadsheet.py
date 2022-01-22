@@ -1,5 +1,6 @@
 from datetime import datetime
 import xlwt
+import time
 from xlwt import Workbook
 from scrape import scrape
 
@@ -18,14 +19,14 @@ def setFileName(nValue, category):
 
     time += dow[datetime.now().isoweekday()]
 
-    if category == 'N-1z0xcmkZ8t6':
+    if nValue == 'N-1z0xcuuZ8t6':
         time += '_womens'
     else:
         time += '_mens'
 
     return time
 
-def parseToSpreadSheet(nValue="N-1z0xcmkZ8t6", category="sale"):
+def parseToSpreadSheet(nValue, category):
     data = scrape(nValue, category)
 
     wb = Workbook()
@@ -80,5 +81,5 @@ def parseToSpreadSheet(nValue="N-1z0xcmkZ8t6", category="sale"):
 
     # save spreadsheet
     fileData = setFileName(data[0], data[1])
-    spreadsheetPath = './spreadsheets/' + fileData + '.xls'
+    spreadsheetPath = fileData + '.xls'
     wb.save(spreadsheetPath)

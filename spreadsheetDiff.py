@@ -62,16 +62,16 @@ def getNewItems(sheet1, sheet2):
                     # no new colors, must have sold out of old one
                     continue
                 else:
-                    for color in newList:
-                        print("---{}---- new color: {}".format(s2.cell_value(i, 1), color))
+                    # for color in newList:
+                    #     print("---{}---- new color: {}".format(s2.cell_value(i, 1), color))
                     addDiffRow(i, counter, newList)
                     counter += 1
         else:
             # new product found, add to diff spreadsheet
-            print("---{}--- newly added".format(s2.cell_value(i, 1)))
+            # print("---{}--- newly added".format(s2.cell_value(i, 1)))
             addDiffRow(i, counter)
             counter += 1
 
     # all new stuff should be added, now we just have to save file
-    path = './spreadsheets/' + 'new_items_in' + sheet2
+    path = 'new_items_in_' + sheet2
     wb.save(path)
