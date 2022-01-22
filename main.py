@@ -71,6 +71,17 @@ while True:
         sa.import_csv('1oZ77SmNEUZIXB5CfiAQ2yMVioyAWeRfYVsMs6zd1WGE', womensContent)
         print('Uploading the new data to the womens google slide - Done')
 
+        # post all products to the corresponding gslide
+        print('Uploading the complete data to the womens google slide')
+        allWomensContent = pd.read_excel(newWomens).to_csv().encode()
+        sa.import_csv('1YVLizdXH6rR8IapHsr0TKiubMQi_8pIdEJBLmld1Vec', allWomensContent)
+        print('Uploading the complete data to the womens google slide - Done')
+
+        print('Uploading the complete data to the mens google slide')
+        allMensContent = pd.read_excel(newMens).to_csv().encode()
+        sa.import_csv('1DAYIgJBoJM4F5_W9JmQ-iYp0oxJRlWB3ecumsgOpFmE', allMensContent)
+        print('Uploading the complete data to the mens google slide - Done')
+
         # delete old spreadsheets
         os.remove(oldMens)
         print('Removed file - {}'.format(oldMens))
