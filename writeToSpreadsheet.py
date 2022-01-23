@@ -19,10 +19,14 @@ def setFileName(nValue, category):
 
     time += dow[datetime.now().isoweekday()]
 
-    if nValue == 'N-1z0xcuuZ8t6':
+    if nValue.startswith('N-1z0xcuuZ8t'):
         time += '_womens'
     else:
         time += '_mens'
+
+    # Canadian data
+    if nValue[-1] == '5':
+        time += '_canada'
 
     return time
 
