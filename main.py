@@ -17,6 +17,8 @@ dow = {
     }
 
 
+sa = gspread.service_account(filename = 'api_credentials.json')
+
 # main loop
 while True:
     currtime = datetime.utcnow()
